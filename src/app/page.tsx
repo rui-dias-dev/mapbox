@@ -5,10 +5,10 @@ export default async function Home() {
     const districtBoundaries: any = [];
     let portugalList = undefined;
     let portugalGeojson = undefined;
-    const string = `http://localhost:3001/assets/datasets/portugal/Portugal.geojson`;
+    const string = `http://localhost:3000/assets/datasets/portugal/Portugal.geojson`;
 
     const response = await fetch(
-        "http://localhost:3001/assets/datasets/fileList_PT.json"
+        "http://localhost:3000/assets/datasets/fileList_PT.json"
     );
     const result = await response.json();
     portugalList = result;
@@ -22,7 +22,7 @@ export default async function Home() {
     const getDistricts = async () => {
         await Promise.all(
             result.districts.map(async (file: any, index: any) => {
-                const actualFile = `http://localhost:3001/assets/datasets/portugal/${file.name}`;
+                const actualFile = `http://localhost:3000/assets/datasets/portugal/${file.name}`;
 
                 portugalDistricts.push({
                     name: file.name,

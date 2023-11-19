@@ -4,6 +4,6 @@
         "dest": "/"
     },{
         "src": "/teste",
-        "dest": "/teste"
+        "dest": "/"
     }]
 }

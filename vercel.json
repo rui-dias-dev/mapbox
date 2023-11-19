@@ -1,9 +1,3 @@
 {
-    "routes": [{
-        "src": "/",
-        "dest": "/"
-    },{
-        "src": "/teste",
-        "dest": "/"
-    }]
+    "rewrite": [{ "srouce": "/(.*)", "destination": "/" }]
 }

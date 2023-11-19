@@ -5,10 +5,10 @@ export default async function Home() {
     const districtBoundaries: any = [];
     let portugalList = undefined;
     let portugalGeojson = undefined;
-    const string = `http://localhost:3000/assets/datasets/portugal/Portugal.geojson`;
+    const string = `https://https://mapbox-five.vercel.app//assets/datasets/portugal/Portugal.geojson`;
 
     const response = await fetch(
-        "http://localhost:3000/assets/datasets/fileList_PT.json"
+        "https://https://mapbox-five.vercel.app/assets/datasets/fileList_PT.json"
     );
     const result = await response.json();
     portugalList = result;
@@ -22,7 +22,7 @@ export default async function Home() {
     const getDistricts = async () => {
         await Promise.all(
             result.districts.map(async (file: any, index: any) => {
-                const actualFile = `http://localhost:3000/assets/datasets/portugal/${file.name}`;
+                const actualFile = `https://https://mapbox-five.vercel.app/assets/datasets/portugal/${file.name}`;
 
                 portugalDistricts.push({
                     name: file.name,

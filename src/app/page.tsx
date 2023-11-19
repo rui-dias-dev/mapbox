@@ -1,4 +1,5 @@
 import Mapbox from "@/components/mapbox";
+import { Suspense } from "react";
 
 export default async function Home() {
     const portugalDistricts: any = [];
@@ -45,12 +46,14 @@ export default async function Home() {
 
     return (
         <main className="w-full h-full">
-            <Mapbox
-                portugalDistricts={portugalDistricts}
-                districtBoundaries={districtBoundaries}
-                portugalList={portugalList}
-                portugalGeojson={portugalGeojson}
-            />
+            <Suspense fallback={<div>loading...</div>}>
+                <Mapbox
+                    portugalDistricts={portugalDistricts}
+                    districtBoundaries={districtBoundaries}
+                    portugalList={portugalList}
+                    portugalGeojson={portugalGeojson}
+                />
+            </Suspense>
         </main>
     );
 }

@@ -14,9 +14,7 @@ const MapComponent = async () => {
     const result = await response.json();
     portugalList = result;
 
-    const requestPortugalGeojson = await fetch(string, {
-        cache: "no-store",
-    });
+    const requestPortugalGeojson = await fetch(string);
 
     portugalGeojson = await requestPortugalGeojson.json();
 
@@ -31,9 +29,7 @@ const MapComponent = async () => {
                 });
 
                 if (file.selected) {
-                    const response = await fetch(actualFile, {
-                        cache: "no-store",
-                    });
+                    const response = await fetch(actualFile);
                     const responseData = await response.json();
 
                     districtBoundaries.push(responseData);
